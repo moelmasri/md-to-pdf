@@ -69,6 +69,7 @@ export async function generateOutput(
 	const browser = await getBrowser();
 
 	const page = await browser.newPage();
+	await page.setDefaultNavigationTimeout(60000);
 
 	const urlPathname = join(relativePath, 'index.html').split(sep).join(posix.sep);
 
